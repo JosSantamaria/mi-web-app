@@ -1,1 +1,52 @@
-<p>registrar works!</p>
+<section>
+  <form action="" fxLayout="column" fxLayoutAlign="center center" #f="ngForm" (ngSubmit)="registrarUsuario(f)">
+
+    <!-- Nombre Input -->
+    <mat-form-field>
+      <mat-label>Ingrese Nombre</mat-label>
+      <input type="text" matInput placeholder="Ingrese Nombre" ngModel required="" name="nombre" #nomInput="ngModel">
+      <mat-error *ngIf="nomInput.hasError('required')">Ingrese un nombre</mat-error>
+    </mat-form-field>
+
+    <!-- Apellido Input -->
+    <mat-form-field>
+      <mat-label>Ingrese Apellido</mat-label>
+      <input type="text" matInput placeholder="Ingrese Apellido" ngModel required="" name="apellidos"
+        #apeInput="ngModel">
+      <mat-error *ngIf="nomInput.hasError('required')">Ingrese un Apellido</mat-error>
+    </mat-form-field>
+
+    <!-- Username Input -->
+    <mat-form-field>
+      <mat-label>Ingrese Username</mat-label>
+      <input type="text" matInput placeholder="Ingrese Username" ngModel required="" name="username"
+        #usrInput="ngModel">
+      <mat-error *ngIf="nomInput.hasError('required')">Ingrese un Username</mat-error>
+    </mat-form-field>
+
+    <!-- Input Email -->
+    <mat-form-field>
+      <mat-label>Ingrese E-mail</mat-label>
+      <input type="email" matInput placeholder="correo@diminui.com" ngModel name="email" email required
+        #emailInput="ngModel">
+      <mat-error *ngIf="emailInput.hasError('required')">El email no puede estar vacio</mat-error>
+      <!--otra validacion *ngIf="!emailInput.hasError('required')"  -->
+      <mat-error *ngIf="emailInput.hasError('email')">El email es invalido</mat-error>
+    </mat-form-field>
+
+    <!-- Input Password -->
+    <mat-form-field hintLabel="*Minimo 7 caracteres.">
+      <mat-label>Ingrese Contraseña</mat-label>
+      <input type="password" matInput placeholder=" * * * * " ngModel name="password" password required
+        #passInput="ngModel" minlength="7">
+      <!-- Condicional *ngIf="passInput.hasError('required')" -->
+      <mat-error>La contraseña debe tener mas de 7 caracteres</mat-error>
+
+
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button [disabled]="f.invalid" color="primary">Guardar</button>
+
+  </form>
+</section>
+

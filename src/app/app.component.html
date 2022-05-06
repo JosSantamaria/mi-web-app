@@ -1,2 +1,27 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+  <mat-sidenav #menu role="navigation">
+    <p>Elemento Sidenav</p>
+  </mat-sidenav>
+  <!-- Contenido a travez del router-outlet -->
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button>
+        <mat-icon (click)="menu.toggle()">
+          menu
+        </mat-icon>
+      </button>
+      <!-- Titulo -->
+      <span>Libro Market</span>
+      <div>
+        <a [routerLink]="['/']" >Inicio</a>
+        <a [routerLink]="['/login']" >Login</a>
+        <a [routerLink]="['/registrar']" >Registrar</a>
 
+      </div>
+    </mat-toolbar>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
