@@ -1,27 +1,18 @@
 <mat-sidenav-container>
   <mat-sidenav #menu role="navigation">
-    <p>Elemento Sidenav</p>
+
+    <!-- Barra Component -->
+    <app-menu-lista (menuToggle)="menu.toggle()" ></app-menu-lista>
+
   </mat-sidenav>
+
   <!-- Contenido a travez del router-outlet -->
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button mat-icon-button>
-        <mat-icon (click)="menu.toggle()">
-          menu
-        </mat-icon>
-      </button>
-      <!-- Titulo -->
-      <span>Libro Market</span>
-      <div>
-        <a [routerLink]="['/']" >Inicio</a>
-        <a [routerLink]="['/login']" >Login</a>
-        <a [routerLink]="['/registrar']" >Registrar</a>
-
-      </div>
-    </mat-toolbar>
+    <!-- Barra Component -->
+    <app-barra (menuToggle)="menu.toggle()"></app-barra>
     <main>
       <router-outlet></router-outlet>
     </main>
-
   </mat-sidenav-content>
+
 </mat-sidenav-container>

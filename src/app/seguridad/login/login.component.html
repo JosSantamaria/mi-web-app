@@ -1,1 +1,26 @@
-<p>login works!</p>
+<section fxLayoutAlign="center">
+  <mat-card >
+    <form
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="10px"
+    >
+      <mat-form-field>
+        <mat-label>Ingrese Email</mat-label>
+        <input type="email" matInput placeholder="E-mail" required="" >
+        <mat-error>Debe Ingresar un Email</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Ingrese Contraseña </mat-label>
+          <input type="password" matInput placeholder="Contraseña" required="" >
+          <mat-error>Debe Ingresar una Contraseña</mat-error>
+        </mat-form-field>
+
+        <button type="submit" mat-raised-button color="primary">Enviar</button>
+
+
+    </form>
+  </mat-card>
+</section>
+
