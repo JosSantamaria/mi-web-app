@@ -4,22 +4,22 @@
     fxLayout="column"
     fxLayoutAlign="center center"
     fxLayoutGap="10px"
+    #f="ngForm"
+    (ngSubmit)="loginUsuario(f)"
     >
       <mat-form-field>
         <mat-label>Ingrese Email</mat-label>
-        <input type="email" matInput placeholder="E-mail" required="" >
-        <mat-error>Debe Ingresar un Email</mat-error>
+        <input type="email" matInput placeholder="E-mail" name="email" ngModel required >
+        <mat-error >Debe Ingresar un Email</mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Ingrese Contraseña </mat-label>
-          <input type="password" matInput placeholder="Contraseña" required="" >
+          <input type="password" matInput placeholder="Password" name="password" ngModel required >
           <mat-error>Debe Ingresar una Contraseña</mat-error>
         </mat-form-field>
 
         <button type="submit" mat-raised-button color="primary">Enviar</button>
-
-
     </form>
   </mat-card>
 </section>

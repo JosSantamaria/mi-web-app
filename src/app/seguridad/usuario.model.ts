@@ -5,6 +5,5 @@ export interface Usuario
   username:string;
   email:string;
   usuarioId:string;
-
-
+  password:string;
 }

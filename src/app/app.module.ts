@@ -16,6 +16,12 @@ import { LoginComponent } from './seguridad/login/login.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BarraComponent } from './navegacion/barra/barra.component';
 import { MenuListaComponent } from './navegacion/menu-lista/menu-lista.component';
+import { SeguridadService } from './seguridad/seguridad.service';
+import { BooksComponent } from './books/books.component'; //Importamos el servicio de seguridad
+import { BooksService } from './books/books.service';
+import { BookNuevoComponent } from './books/book-nuevo.component';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { AutoresComponent } from './autores/autores.component';
 
 
 
@@ -32,6 +38,9 @@ import { MenuListaComponent } from './navegacion/menu-lista/menu-lista.component
     LoginComponent,
     BarraComponent,
     MenuListaComponent,
+    BooksComponent,
+    BookNuevoComponent,
+    AutoresComponent
   ],
   imports: [
     BrowserModule,
@@ -39,9 +48,12 @@ import { MenuListaComponent } from './navegacion/menu-lista/menu-lista.component
     FlexLayoutModule,
     FormsModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+
   ],
-  providers: [LibrosService],
-  bootstrap: [AppComponent]
+  //hacemos servicios disponibles para toda la aplicacion desde los providers
+  providers: [LibrosService,SeguridadService,BooksService, {provide:MAT_DATE_LOCALE, useValue: 'es-ES'},],
+  bootstrap: [AppComponent],
+  entryComponents: [BookNuevoComponent]
 })
 export class AppModule { }
