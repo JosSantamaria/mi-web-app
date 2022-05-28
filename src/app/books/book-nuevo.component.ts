@@ -27,7 +27,7 @@ export class BookNuevoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.autores = this.autoresService.obtenerAutores();
+    //this.autores = this.autoresService.obtenerActuaListener;
   }
 
   selected(event: MatSelectChange) {

@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -49,6 +50,7 @@ import { AutoresComponent } from './autores/autores.component';
     FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
+    HttpClientModule
 
   ],
   //hacemos servicios disponibles para toda la aplicacion desde los providers
