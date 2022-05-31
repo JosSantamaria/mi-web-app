@@ -1,22 +1,48 @@
-import { Subject } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { filter, Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import {Books} from './books.model';
+import { PaginationBooks } from './pagination-book.model';
+
+//hacemos global el servicio
+@Injectable({
+  providedIn: 'root'
+})
+
 
 export class BooksService {
 
-  bookLista: Books[] =
-    [
-          {libroId:1,titulo:'Algoritmos Basicos',descripcion:'Libro basico de algoritmos', autor:'Vaxi Drez',precio:18},
-          {libroId:2,titulo:'Angular',descripcion:'Libro Intermedia/Avanzado', autor:'Fernando Herrera',precio:25},
-          {libroId:3,titulo:'ASP.NET',descripcion:'Master en C# y ASP', autor:'Juan Arrevalo',precio:30},
-          {libroId:4,titulo:'Java',descripcion:'Java es raro', autor:'John Cena',precio:99}
-    ];
+  private bookLista: Books[] = [];
+    baseUrl = environment.baseUrl;
+    bookSubject = new Subject<Books>();//creamos el observable con subject de tipo books, evalua la respuesta del servidor
+    bookPagination:PaginationBooks; //instanciacion del interface paginationBooks
+    bookPaginationSubject = new Subject<PaginationBooks>();
 
-    bookSubject = new Subject<Books>();
-
+    constructor(private http:HttpClient){}
 
     //Metodo para obtener todos los libros
-    obtenerLibros(){
-      return this.bookLista.slice()
+    obtenerLibros(LibrosPorPagina:number,paginaActual:number,sort:string,sortDirection:string,filterValue:any){
+      const request = { //creamos el objeto request (objeto que se obtendra en la peticion)
+        pageSize:LibrosPorPagina,
+        page:paginaActual,
+        sort,
+        sortDirection:sortDirection,
+        filterValue:filterValue
+      };
+
+      //Obtener Paginacion
+      this.http.post<PaginationBooks>( this.baseUrl + 'api/Libro/Pagination', request)
+      .subscribe( (response) => { 
+        this.bookPagination = response;
+        this.bookPaginationSubject.next(this.bookPagination);
+
+      });
+    }
+
+    obtenerActualListener()
+    {
+      return this.bookPaginationSubject.asObservable();
     }
 
     guardarLibro(book:Books){

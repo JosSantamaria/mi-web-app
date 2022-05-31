@@ -54,7 +54,7 @@ import { AutoresComponent } from './autores/autores.component';
 
   ],
   //hacemos servicios disponibles para toda la aplicacion desde los providers
-  providers: [LibrosService,SeguridadService,BooksService, {provide:MAT_DATE_LOCALE, useValue: 'es-ES'},],
+  providers: [LibrosService,SeguridadService,{provide:MAT_DATE_LOCALE, useValue: 'es-ES'},],
   bootstrap: [AppComponent],
   entryComponents: [BookNuevoComponent]
 })
