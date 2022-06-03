@@ -1,10 +1,10 @@
 <div fxLayoutAlign="center center">
   <mat-form-field fxFlex="60%" >
-    <input matInput type="text" (keyup)="hacerFiltro($any($event))" placeholder="Ingrese su Busqueda">
+    <input matInput type="text" (keyup)="hacerFiltro($event)" placeholder="Ingrese su Busqueda">
   </mat-form-field>
 </div>
 
-<mat-table [dataSource]="dataSource" matSort >
+<mat-table [dataSource]="dataSource" matSort (matSortChange)="ordenarColumna($event)" >
   <!-- Definicion de primera colummna -->
   <ng-container matColumnDef="titulo" >
     <mat-header-cell *matHeaderCellDef mat-sort-header>Titulo</mat-header-cell>
