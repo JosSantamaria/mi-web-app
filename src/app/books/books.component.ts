@@ -72,7 +72,7 @@ export class BooksComponent implements OnInit, AfterViewInit, OnDestroy {
           $this.sortDirection,
           filterValueLocal
         );
-      }
+      } 
     }, 500);
   }
 
