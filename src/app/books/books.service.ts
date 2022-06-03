@@ -15,7 +15,7 @@ export class BooksService {
 
   private bookLista: Books[] = [];
     baseUrl = environment.baseUrl;
-    bookSubject = new Subject<Books>();//creamos el observable con subject de tipo books, evalua la respuesta del servidor
+    bookSubject = new Subject<void>(); //creamos el observable con subject de tipo books, evalua la respuesta del servidor
     bookPagination:PaginationBooks; //instanciacion del interface paginationBooks
     bookPaginationSubject = new Subject<PaginationBooks>();
 
@@ -46,8 +46,15 @@ export class BooksService {
     }
 
     guardarLibro(book:Books){
+      //this.bookLista.push(book); //introduimos al arreglo y retornamos el arreglo nuevo
+      
+      this.http.post(this.baseUrl + 'api/Libro',book)
+        .subscribe(response => {
+          this.bookSubject.next(); 
+        });
+    }
 
-      this.bookLista.push(book); //introduimos al arreglo y retornamos el arreglo nuevo
-      this.bookSubject.next(book); //estamos atentos a este evento
+    guardarLibroListener(){
+      return this.bookSubject.asObservable();
     }
 }

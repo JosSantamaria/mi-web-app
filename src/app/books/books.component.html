@@ -4,27 +4,29 @@
   </mat-form-field>
 </div>
 
-<mat-table [dataSource]="dataSource" matSort>
+<mat-table [dataSource]="dataSource" matSort >
   <!-- Definicion de primera colummna -->
-  <ng-container matColumnDef="titulo">
-    <mat-header-cell *matHeaderCellDef mat-sort-header=>Titulo</mat-header-cell>
+  <ng-container matColumnDef="titulo" >
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Titulo</mat-header-cell>
     <mat-cell *matCellDef="let element">{{element.titulo}}</mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="descripcion">
+  <ng-container matColumnDef="descripcion" >
     <mat-header-cell *matHeaderCellDef mat-sort-header >Descripcion</mat-header-cell>
     <mat-cell *matCellDef="let element">{{element.descripcion}}</mat-cell>
   </ng-container>
+
+  <ng-container matColumnDef="autor">
+    <mat-header-cell *matHeaderCellDef mat-sort-header >Autor</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.autor.nombreCompleto}}</mat-cell>
+  </ng-container>
+
 
   <ng-container matColumnDef="precio">
     <mat-header-cell *matHeaderCellDef mat-sort-header >Precio</mat-header-cell>
     <mat-cell *matCellDef="let element">{{element.precio}}</mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="autor">
-    <mat-header-cell *matHeaderCellDef mat-sort-header >Autor</mat-header-cell>
-    <mat-cell *matCellDef="let element">{{element.autor}}</mat-cell>
-  </ng-container>
 
   <mat-header-row *matHeaderRowDef="desplegarColumnas"></mat-header-row>
   <mat-row *matRowDef="let row, columns: desplegarColumnas"></mat-row>

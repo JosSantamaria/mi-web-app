@@ -1,3 +1,4 @@
+import { AutoresService } from './../autores/autores.service';
 import { PaginationBooks } from './pagination-book.model';
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { BooksService } from './books.service';
@@ -19,7 +20,7 @@ import { Subscription } from 'rxjs';
 export class BooksComponent implements OnInit, AfterViewInit, OnDestroy {
 
   bookData: Books[] = []; //variable para recuperar los datos del servicio
-  desplegarColumnas = ['titulo', 'descripcion', 'precio', 'autor'];
+  desplegarColumnas = ['titulo', 'descripcion', 'autor', 'precio' ];
   dataSource = new MatTableDataSource<Books>();
   @ViewChild(MatSort) ordenamiento:MatSort; //Ordenamiento de mat-cell
   @ViewChild(MatPaginator) paginacion: MatPaginator; //Paginacion de mat-cell
@@ -52,9 +53,14 @@ export class BooksComponent implements OnInit, AfterViewInit, OnDestroy {
 
   abrirDialog(){
 
-    this.dialog.open(BookNuevoComponent,{
-      width: '350px'
+    const dialogRef =  this.dialog.open(BookNuevoComponent,{
+      width: '550px'
     });
+
+    dialogRef.afterClosed()
+      .subscribe( () => {
+        this.bookService.obtenerLibros(this.librosPorPagina,this.paginaActual,this.sort,this.sortDirection,this.filterValue);
+      })
   }
 
   ngOnInit(): void {
