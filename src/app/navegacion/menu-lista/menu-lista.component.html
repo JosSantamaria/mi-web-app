@@ -14,10 +14,20 @@
     <span class="navegacion-list-label">Registrar</span>
   </a>
 
-  <mat-list-item >
-    <button mat-icon-button (click)="terminarSesionMenu()" *ngIf="estadoUsuario">
+  <a mat-list-item [routerLink]="['/books']" (click)="onCerrarMenu()" *ngIf="estadoUsuario">
+    <mat-icon>local_library</mat-icon>
+    <span class="navegacion-list-label">Libros</span>
+  </a>
+
+  <a mat-list-item [routerLink]="['/autores']" (click)="onCerrarMenu()" *ngIf="estadoUsuario">
+    <mat-icon>people</mat-icon>
+    <span class="navegacion-list-label">Autores</span>
+  </a>
+
+  <mat-list-item (click)="terminarSesionMenu()">
+    <button mat-icon-button  *ngIf="estadoUsuario">
       <mat-icon>eject</mat-icon>
-      <span class="navegacion-list-label">Salir</span>
+      <span class="navegacion-list-label" >Salir</span>
       </button>
   </mat-list-item>
 </mat-nav-list>

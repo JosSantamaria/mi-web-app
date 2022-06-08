@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,10 +23,7 @@ import { BooksService } from './books/books.service';
 import { BookNuevoComponent } from './books/book-nuevo.component';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { AutoresComponent } from './autores/autores.component';
-
-
-
-
+import { SeguridadInterceptor } from './seguridad/seguridad-interceptor';
 
 @NgModule({
   declarations: [
@@ -41,7 +38,7 @@ import { AutoresComponent } from './autores/autores.component';
     MenuListaComponent,
     BooksComponent,
     BookNuevoComponent,
-    AutoresComponent
+    AutoresComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,12 +47,15 @@ import { AutoresComponent } from './autores/autores.component';
     FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
-
+    HttpClientModule,
   ],
   //hacemos servicios disponibles para toda la aplicacion desde los providers
-  providers: [LibrosService,SeguridadService,{provide:MAT_DATE_LOCALE, useValue: 'es-ES'},],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: SeguridadInterceptor, multi: true },
+    LibrosService,
+    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },
+  ],
   bootstrap: [AppComponent],
-  entryComponents: [BookNuevoComponent]
+  entryComponents: [BookNuevoComponent],
 })
-export class AppModule { }
+export class AppModule {}

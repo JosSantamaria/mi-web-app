@@ -25,7 +25,7 @@ export class AutoresService {
   //Metodos del servicio
   obtenerAutores() { //las comunicaciones entre angular y el server son asincronas, usamos observables, subjects
    
-    this.http.get<Autor[]>(this.baseUrl + 'api/LibreriaAutor/')
+    this.http.get<Autor[]>(this.baseUrl + 'Autor')
     .subscribe( (data) => {
       this.autoresLista = data;
       this.autoresSubject.next([...this.autoresLista]); //next: refresca la data y la muestra #operador spread

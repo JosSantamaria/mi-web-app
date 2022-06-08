@@ -10,16 +10,12 @@ import { SeguridadRouter } from './seguridad/seguridad.router';
 
 const routes: Routes = [
   //routing
-  {path: '', component: InicioComponent, canActivate: [SeguridadRouter]},
+  {path: '', component: InicioComponent, canActivate: [SeguridadRouter] },
   {path: 'libros', component: LibrosComponent},
   {path: 'registrar', component: RegistrarComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'books', component: BooksComponent},
-  {path: 'autores', component: AutoresComponent}
-
-
-
-
+  {path: 'books', component: BooksComponent, canActivate: [SeguridadRouter]}, //agragamos canActivate para que solo pueda acceder a este componente si esta logueado
+  {path: 'autores', component: AutoresComponent, canActivate: [SeguridadRouter]} //si perdemos la sesion, no podremos acceder a este componente
 
 ];
 

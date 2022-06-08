@@ -1,7 +1,6 @@
 import { AutoresService } from './../autores/autores.service';
 import { PaginationBooks } from './pagination-book.model';
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild,
-} from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { BooksService } from './books.service';
 import { Books } from './books.model';
 import { MatTableDataSource } from '@angular/material/table';
@@ -112,7 +111,8 @@ export class BooksComponent implements OnInit, AfterViewInit, OnDestroy {
       this.sortDirection,
       this.filterValue
     );
-    this.bookService
+
+    this.bookSubscription = this.bookService
       .obtenerActualListener()
       .subscribe((pagination: PaginationBooks) => {
         this.dataSource = new MatTableDataSource<Books>(pagination.data);
