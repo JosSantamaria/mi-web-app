@@ -37,7 +37,7 @@ export class SeguridadService
             email:response.email,
             usuarioId: response.usuarioId,
             nombre:response.nombre,
-            apellidos:response.apellidos,
+            apellido:response.apellido,
             username:response.username,
             password:'',
             token:response.token
@@ -57,18 +57,36 @@ export class SeguridadService
 
       registrarUsuario(usr:Usuario)
       {
-        this.usuario = {
-          email:usr.email,
-          usuarioId: Math.round(Math.random() * 10000 ).toString(),
-          nombre:usr.nombre,
-          apellidos:usr.apellidos,
-          username:usr.username,
-          password:'',
-          token:''
-        };
+        this.http.post<Usuario>(this.baseUrl + 'usuario/registrar',usr)
+        .subscribe( (response) => {console.log('registro respuesta ', response)
 
-        this.seguridadCambio.next(true); //Iniciamos el observable en true para iniciar la sesion despues del registro
-        this.router.navigate(['/']); //Navegamos a la pagina principal con el elmento router
+        this.token = response.token;
+        this.usuario = {
+          email:response.email,
+          usuarioId: response.usuarioId,
+          nombre:response.nombre,
+          apellido:response.apellido,
+          username:response.username,
+          password:'',
+          token:response.token
+        };
+        
+        this.seguridadCambio.next(true); //Iniciamos el observable en true para iniciar la sesion despues del login
+        localStorage.setItem('token',response.token);//almacenamos el token en el localStorage del navegador
+        this.router.navigate(['/']);
+      });
+
+        // this.usuario = {
+        //   email:usr.email,
+        //   usuarioId: Math.round(Math.random() * 10000 ).toString(),
+        //   nombre:usr.nombre,
+        //   apellido:usr.apellido,
+        //   username:usr.username,
+        //   password:'',
+        //   token:''
+        // };
+        // this.seguridadCambio.next(true); //Iniciamos el observable en true para iniciar la sesion despues del registro
+        // this.router.navigate(['/']); //Navegamos a la pagina principal con el elmento router
       }
 
       login(loginData:LoginData)
@@ -82,7 +100,7 @@ export class SeguridadService
             email:response.email,
             usuarioId: response.usuarioId,
             nombre:response.nombre,
-            apellidos:response.apellidos,
+            apellido:response.apellido,
             username:response.username,
             password:'',
             token:response.token
