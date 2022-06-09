@@ -1,0 +1,211 @@
+[{
+  "_id": {
+    "$oid": "62998b457c7748042167687f"
+  },
+  "titulo": "Angular de Cero a Experto",
+  "descripcion": "Aprende Angular desde la bases, hasta lo importante y avanzado",
+  "precio": 129,
+  "fechaPublicacion": {
+    "$date": {
+      "$numberLong": "1654146000000"
+    }
+  },
+  "autor": {
+    "_id": {
+      "$oid": "627bf03d190ad6adae677d2e"
+    },
+    "nombre": null,
+    "apellido": null,
+    "gradoAcademico": null,
+    "nombreCompleto": "Jos Santamaria"
+  }
+},{
+  "_id": {
+    "$oid": "6299921d7c77480421676880"
+  },
+  "titulo": "Angular Basico",
+  "descripcion": "Aprende los fundamentos de Angular",
+  "precio": 119,
+  "fechaPublicacion": {
+    "$date": {
+      "$numberLong": "1645768800000"
+    }
+  },
+  "autor": {
+    "_id": {
+      "$oid": "627bf03d190ad6adae677d2e"
+    },
+    "nombre": null,
+    "apellido": null,
+    "gradoAcademico": null,
+    "nombreCompleto": "Jos Santamaria"
+  }
+},{
+  "_id": {
+    "$oid": "6299923d7c77480421676881"
+  },
+  "titulo": "Backend para Principiantes",
+  "descripcion": "Aprende algo pues.",
+  "precio": 100,
+  "fechaPublicacion": {
+    "$date": {
+      "$numberLong": "1655355600000"
+    }
+  },
+  "autor": {
+    "_id": {
+      "$oid": "627bf03d190ad6adae677d30"
+    },
+    "nombre": null,
+    "apellido": null,
+    "gradoAcademico": null,
+    "nombreCompleto": "John Ortiz"
+  }
+},{
+  "_id": {
+    "$oid": "6299927e7c77480421676882"
+  },
+  "titulo": "Algoritmica Basica",
+  "descripcion": "Fundamento de Algoritmos Basicos",
+  "precio": 120,
+  "fechaPublicacion": {
+    "$date": {
+      "$numberLong": "1655355600000"
+    }
+  },
+  "autor": {
+    "_id": {
+      "$oid": "627bf03d190ad6adae677d31"
+    },
+    "nombre": null,
+    "apellido": null,
+    "gradoAcademico": null,
+    "nombreCompleto": "Heli Moceda"
+  }
+},{
+  "_id": {
+    "$oid": "629992b37c77480421676883"
+  },
+  "titulo": "Como ser Frontend sin morir en el Intento",
+  "descripcion": "Aprende a ser un Frontend Dev Experto",
+  "precio": 129,
+  "fechaPublicacion": {
+    "$date": {
+      "$numberLong": "1649221200000"
+    }
+  },
+  "autor": {
+    "_id": {
+      "$oid": "627bf03d190ad6adae677d30"
+    },
+    "nombre": null,
+    "apellido": null,
+    "gradoAcademico": null,
+    "nombreCompleto": "John Ortiz"
+  }
+},{
+  "_id": {
+    "$oid": "629992f27c77480421676884"
+  },
+  "titulo": "Kubernetes y Docker desde Cero",
+  "descripcion": "Aprende sobre tecnologias DevOps desde el principi",
+  "precio": 200,
+  "fechaPublicacion": {
+    "$date": {
+      "$numberLong": "1655096400000"
+    }
+  },
+  "autor": {
+    "_id": {
+      "$oid": "627bf03d190ad6adae677d2f"
+    },
+    "nombre": null,
+    "apellido": null,
+    "gradoAcademico": null,
+    "nombreCompleto": "Vaxi Drez"
+  }
+},{
+  "_id": {
+    "$oid": "629a37f9ea193c2fcc9a9251"
+  },
+  "titulo": "Identity Framework 5",
+  "descripcion": "Aprende sobre el framework de comunicacion para DB.",
+  "precio": 222,
+  "fechaPublicacion": {
+    "$date": {
+      "$numberLong": "1655787600000"
+    }
+  },
+  "autor": {
+    "_id": {
+      "$oid": "627bf03d190ad6adae677d2f"
+    },
+    "nombre": null,
+    "apellido": null,
+    "gradoAcademico": null,
+    "nombreCompleto": "Vaxi Drez"
+  }
+},{
+  "_id": {
+    "$oid": "629a3834ea193c2fcc9a9252"
+  },
+  "titulo": "Java Basico",
+  "descripcion": "Aprende Java desde los fundamentos",
+  "precio": 130,
+  "fechaPublicacion": {
+    "$date": {
+      "$numberLong": "1655442000000"
+    }
+  },
+  "autor": {
+    "_id": {
+      "$oid": "627bf03d190ad6adae677d30"
+    },
+    "nombre": null,
+    "apellido": null,
+    "gradoAcademico": null,
+    "nombreCompleto": "John Ortiz"
+  }
+},{
+  "_id": {
+    "$oid": "62a1019b6a2612717a56b474"
+  },
+  "titulo": "Galactus",
+  "descripcion": "Comic #1",
+  "precio": 300,
+  "fechaPublicacion": {
+    "$date": {
+      "$numberLong": "1655355600000"
+    }
+  },
+  "autor": {
+    "_id": {
+      "$oid": "627bf03d190ad6adae677d2e"
+    },
+    "nombre": null,
+    "apellido": null,
+    "gradoAcademico": null,
+    "nombreCompleto": "Jos Santamaria"
+  }
+},{
+  "_id": {
+    "$oid": "62a104876a2612717a56b475"
+  },
+  "titulo": "Node Desde Cero a Experto",
+  "descripcion": "Aprende node JS desde cero hasta lo avanzado",
+  "precio": 129,
+  "fechaPublicacion": {
+    "$date": {
+      "$numberLong": "1656046800000"
+    }
+  },
+  "autor": {
+    "_id": {
+      "$oid": "627bf03d190ad6adae677d30"
+    },
+    "nombre": null,
+    "apellido": null,
+    "gradoAcademico": null,
+    "nombreCompleto": "John Ortiz"
+  }
+}]

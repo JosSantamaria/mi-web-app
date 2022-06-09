@@ -1,0 +1,29 @@
+[{
+  "_id": {
+    "$oid": "627bf03d190ad6adae677d2e"
+  },
+  "nombre": "Jos",
+  "apellido": "Santamaria",
+  "gradoAcademico": "Bachiller Tecnico"
+},{
+  "_id": {
+    "$oid": "627bf03d190ad6adae677d2f"
+  },
+  "nombre": "Vaxi",
+  "apellido": "Drez",
+  "gradoAcademico": "Ingeniero de Software"
+},{
+  "_id": {
+    "$oid": "627bf03d190ad6adae677d30"
+  },
+  "nombre": "John",
+  "apellido": "Ortiz",
+  "gradoAcademico": "Ingeniero de Sistemas"
+},{
+  "_id": {
+    "$oid": "627bf03d190ad6adae677d31"
+  },
+  "nombre": "Heli",
+  "apellido": "Moceda",
+  "gradoAcademico": "Tecnico en Computacion"
+}]
